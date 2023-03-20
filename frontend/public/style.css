@@ -1,0 +1,116 @@
+body {
+  background: black;
+  font-family: Montserrat;
+}
+
+nav {
+  background: black !important;
+  color: black;
+}
+
+.carousel-item img {
+  height: 35rem;
+}
+
+.carousel-item p {
+  font-size: 3rem;
+  font-weight: bolder;
+  position: absolute;
+  /* position makes the word to be placed on thae images  */
+  z-index: 5;
+  top: 25%;
+  left: 10%;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+.services {
+  display: flex;
+  justify-content: space-around;
+  background-image: url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2Fyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60);
+  padding: 9rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: rgb(228, 208, 208);
+  text-shadow: 1px 1px 1px black;
+}
+
+.service i {
+  font-size: 3rem;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service p {
+  text-align: center;
+  font-weight: 900;
+}
+
+.btn-dark {
+  background-color: rgb(20, 19, 19);
+  color: white;
+  width: 100%;
+  border: white;
+}
+
+/* .btn-primary:hover{
+    background-color: black;
+    color: white;
+    width: 100%;
+    border: white;
+} */
+
+.card {
+  margin-top: 1rem;
+}
+
+.card-img-top {
+  height: 15rem;
+}
+
+footer {
+  background: black;
+  margin-top: 1rem;
+  border-top: 1px solid white;
+}
+
+.w {
+  padding: 1rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+  }
+  .carousel-item p {
+    font-size: 2rem;
+  }
+  .col {
+    display: flex;
+    justify-content: center;
+  }
+  .carousel-item img {
+    height: 20rem;
+  }
+  .carousel-item p {
+    font-size: 1rem;
+    font-weight: bolder;
+    position: absolute;
+    /* position makes the word to be placed on thae images  */
+    z-index: 5;
+    top: 25%;
+    left: 10%;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+  }
+  /* .nav-item dropdown{
+    overflow: auto;
+} */
+}
