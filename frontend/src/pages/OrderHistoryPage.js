@@ -19,7 +19,7 @@ export default function OrderHistoryPage() {
 
     return <>
     {orders.length === 0 ? <h2 className="text-white">No Orders Yet</h2> :
-            <table className="table">
+            <table className=" text-white table">
                 <h1 className="text-center text-white m-5">ORDER HISTORY</h1>
                 <tr>
                     <th>SN.</th>
