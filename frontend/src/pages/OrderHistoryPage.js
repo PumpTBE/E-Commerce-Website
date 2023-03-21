@@ -19,37 +19,23 @@ export default function OrderHistoryPage() {
 
     return <>
     {orders.length === 0 ? <h2 className="text-white">No Orders Yet</h2> :
-            <table className=" text-white table">
-                <h1 className="text-center text-white m-5">ORDER HISTORY</h1>
-                <tr>
-                    <th id="tab-id">SN.</th>
-                    <th>Email</th> 
-                    <th>Price ($)</th> 
-                    <th>Status</th> 
-                    {userInfo.isAdmin &&  <><th>Actions</th></>}
+        <table className="table">
+            <tr>
+                <th>SN.</th> <th>Email</th> <th>Price ($)</th> <th>Status</th> 
+            </tr>
+            {orders.map((order, i) => {
+                return <tr style={{fontSize : "1.4rem"}}>
+                    <td className="py-5">{i + 1}.</td>
+                    <td>{order.user && order.user.email}</td>
+                    <td>{order.totalPrice && order.totalPrice.toLocaleString()}</td>
+                    <td>{order.status}</td>
                     
                 </tr>
-                {orders.map((order, i) => {
-                    return <tr>
-                        <td>{i + 1}.</td>
-                        <td>{order.user && order.user.email}</td>
-                        <td>{order.totalPrice && order.totalPrice.toLocaleString()}</td>
-                        <td>{order.status}</td>
-                        {userInfo.isAdmin &&  <>
-                            <td>
-                            <Link to={`/order/${order._id}`}>
-                                <button className="btn btn-primary me-2"><i className="fas fa-eye"></i></button>
-                            </Link>
-                            <button className="btn btn-danger"><i className="fa fa-trash-alt"></i></button>
-                        </td>
-                        </>
-                }
-                        
-                    </tr>
-                })}
+            })}
 
-            </table>
+        </table>
 
-        }
-        </>
+    }
+
+</>
 }
