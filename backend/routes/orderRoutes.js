@@ -83,5 +83,11 @@ orderRouter.put("/:id",async(req, res) =>{
 
 });
 
+/// UPDATING THE ORDER HISTORY PAGE
+orderRouter.get("/order-history/:id", async(req, res)=>{
+  const id = req.params.id;
+  const orders = await Order.find({user : id}).populate("user");
+  res.send(orders)
+})
 
 module.exports = orderRouter;
