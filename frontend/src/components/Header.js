@@ -77,11 +77,11 @@ export default function Header() {
 
                 {userInfo && ( <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 {userInfo.isAdmin && <li><Link class="dropdown-item" to="/admin-products">Admin Product</Link></li>}
-                <li><hr class="dropdown-divider" /></li>
+                {userInfo.isAdmin && <li><hr class="dropdown-divider" /></li> }
                 {userInfo.isAdmin &&  <li><Link class="dropdown-item" to="/admin-orders">Admin Orders</Link></li>}
-                <li><hr class="dropdown-divider" /></li> 
+                {userInfo.isAdmin &&  <li><hr class="dropdown-divider" /></li> }
                 {userInfo.isAdmin &&  <li><Link class="dropdown-item" to="/category">Product Category</Link></li>}
-                    <li><hr class="dropdown-divider" /></li>
+                {userInfo.isAdmin && <li><hr class="dropdown-divider" /> </li> }
                     <li><Link class="dropdown-item" to="/order-history">Order History</Link></li>
                     <li><hr class="dropdown-divider" /></li>
                     <li><Link onClick={logoutHandler} class="dropdown-item" to="/">Logout</Link></li>
