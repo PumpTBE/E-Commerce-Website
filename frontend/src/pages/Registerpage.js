@@ -1,4 +1,4 @@
-import e from "cors";
+
 import validator from "validator";
 import { useState } from "react";
 import axios from "axios";
