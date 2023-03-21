@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
+
 
 
 export default function Header() {
@@ -52,37 +54,37 @@ export default function Header() {
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
+                <Link class="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/cart">
+                <Link class="nav-link" to="/cart">
                   Cart
-                </a>
+                </Link>
               </li>
-              <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"
+              <li class="nav-item dropdown"> <Link class="nav-link dropdown-toggle" to="#"
                   id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
 
-                  {userInfo ? (userInfo.username) : (<i className="fa fa-user"></i>)}</a>
+                  {userInfo ? (userInfo.username) : (<i className="fa fa-user"></i>)}</Link>
                 {!userInfo && ( <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="/login">Login</a></li>
+                <li><Link class="dropdown-item" to="/login">Login</Link></li>
                 <li><hr class="dropdown-divider" /></li> 
-                <li><a class="dropdown-item" href="/register">Register</a></li>
+                <li><Link class="dropdown-item" to="/register">Register</Link></li>
                 </ul>
                 )}
 
                 {userInfo && ( <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                {userInfo.isAdmin && <li><a class="dropdown-item" href="/admin-products">Admin Product</a></li>}
+                {userInfo.isAdmin && <li><Link class="dropdown-item" to="/admin-products">Admin Product</Link></li>}
                 <li><hr class="dropdown-divider" /></li>
-                {userInfo.isAdmin &&  <li><a class="dropdown-item" href="/admin-orders">Admin Orders</a></li>}
+                {userInfo.isAdmin &&  <li><Link class="dropdown-item" to="/admin-orders">Admin Orders</Link></li>}
                 <li><hr class="dropdown-divider" /></li> 
-                {userInfo.isAdmin &&  <li><a class="dropdown-item" href="/category">Product Category</a></li>}
+                {userInfo.isAdmin &&  <li><Link class="dropdown-item" to="/category">Product Category</Link></li>}
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="/order-history">Order History</a></li>
+                    <li><Link class="dropdown-item" to="/order-history">Order History</Link></li>
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a onClick={logoutHandler} class="dropdown-item" href="/">Logout</a></li>
+                    <li><Link onClick={logoutHandler} class="dropdown-item" to="/">Logout</Link></li>
                   </ul>
                 )}
               </li>
