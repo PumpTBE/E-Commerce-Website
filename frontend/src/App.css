@@ -352,6 +352,10 @@ nav{
   position: relative;
 }
 
+.tab-id{
+margin-left: -50rem;
+}
+
 .sidebar{
   position: fixed;
   background-color: black;

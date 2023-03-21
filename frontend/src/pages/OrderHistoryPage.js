@@ -22,7 +22,7 @@ export default function OrderHistoryPage() {
             <table className=" text-white table">
                 <h1 className="text-center text-white m-5">ORDER HISTORY</h1>
                 <tr>
-                    <th>SN.</th>
+                    <th id="tab-id">SN.</th>
                     <th>Email</th> 
                     <th>Price ($)</th> 
                     <th>Status</th> 
