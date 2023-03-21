@@ -30,12 +30,14 @@ export default function OrderHistoryPage() {
                         <td>{order.user && order.user.email}</td>
                         <td>{order.totalPrice && order.totalPrice.toLocaleString()}</td>
                         <td>{order.status}</td>
+                        {userInfo.isAdmin &&
                         <td>
                             <Link to={`/order/${order._id}`}>
                                 <button className="btn btn-primary me-2"><i className="fas fa-eye"></i></button>
                             </Link>
                             <button className="btn btn-danger"><i className="fa fa-trash-alt"></i></button>
                         </td>
+                }
                     </tr>
                 })}
 
